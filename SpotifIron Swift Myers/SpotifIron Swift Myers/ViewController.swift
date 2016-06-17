@@ -22,7 +22,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         super.viewDidLoad()
         
         
-        // Do any additional setup after loading the view, typically from a nib.
+        // 
+//        Do any additional setup after loading the view, typically from a nib.
     }
     // MARK : Grab text and implement parsing method
     
