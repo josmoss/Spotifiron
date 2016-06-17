@@ -15,6 +15,14 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
     }
     
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+        
+        
+    }
+    
     // MARK : Table View Methods
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
