@@ -9,6 +9,10 @@
 import UIKit
 
 class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+    
+    let session = NSURLSession.sharedSession()
+    
+    var albumnArray = [Albumn]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +41,14 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
 
+    func fetchAlbumn(albumn : String) {
+
+        print("fetchArtist query value is \(albumn)")
+        
+        self.albumnArray.removeAll
+        
+        
+    }
 
     /*
     // MARK: - Navigation
