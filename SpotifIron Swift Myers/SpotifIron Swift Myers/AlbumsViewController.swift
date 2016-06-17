@@ -12,7 +12,7 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     let session = NSURLSession.sharedSession()
     
-    var albumnArray = [Albumn]()
+    var albumArray = [Album]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +23,7 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewWillAppear(animated)
         
         
-        
+        self.fetchAlbum("7ypJwUskH6rxpPPCDTdV5V")
         
     }
     
@@ -49,13 +49,78 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
 
-    func fetchAlbumn(albumn : String) {
+    func fetchAlbum(artistID : String) {
 
-        print("fetchArtist query value is \(albumn)")
+        print("fetchAlbum query value is \(artistID)")
         
-        self.albumnArray.removeAll
+        let albumURLString = "https://api.spotify.com/v1/search?q=\(artistID)&type=album"
         
-        
+        if let url = NSURL(string: albumURLString)
+        {
+            let task = self.session.dataTaskWithURL(url, completionHandler:
+                {
+                    (data, response, error) in
+                    
+                    if error != nil
+                    {
+                        print("An error occured")
+                        return
+                    }
+                    
+                    do
+                    {
+                        if let data = data {
+                            if let dict = try NSJSONSerialization.JSONObjectWithData(data, options: []) as? JSONDictionary {
+                                
+                                   if let itemsArray = dict["items"] as? JSONArray {
+                                    
+                                        for itemsDict in itemsArray  {
+                                            
+                                            print("The item dict == \(itemsDict)")
+                                          
+                                            let theAlbum = Album()
+                                            
+                                            if let href = itemsDict["href"] as? String {
+                                               theAlbum.href = href
+                                            
+                                            } else {
+                                                print("I could not parse the href")
+                                            }
+                                           
+                                            if let albumID = itemsDict["id"] as? String {
+                                                theAlbum.albumID = albumID
+                                                
+                                            } else {
+                                               print("I could not parse the albumID")
+                                            }
+                                            
+                                            if let albumName = itemsDict["name"] as? String {
+                                               theAlbum.albumName = albumName
+                                    
+                                            } else {
+                                             print("I could not parse the albumName")
+                                            }
+                                    
+                                           self.albumArray.append(theAlbum)
+                                       }
+                                    
+                                    
+                                   } else {
+                                       print("I could not parse the items")
+                                   }
+                               
+                         } else {
+                               print ("I could not parse the json dictionary")
+                           }
+                       }
+                   } catch {
+                        // error happened
+                    }
+                    
+           })
+           task.resume()
+            
+        }
     }
 
     /*
