@@ -68,6 +68,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cell.textLabel?.text = currentArtist.name
         
+        // begin asynchronous section on converting URL strings into images
         if let imageURL = NSURL(string: self.currentArtist.imageURL) {
             let imageSession = NSURLSession.sharedSession()
             let task = imageSession.dataTaskWithURL(imageURL, completionHandler: {
@@ -77,6 +78,9 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     print("image error occured")
                     
                     dispatch_async(dispatch_get_main_queue(), {
+                        // make sure the file "No_image" is in the assets folder
+                        // I just pulled this from the internet
+                        
                         cell.imageView?.image = UIImage(named: "No_image")
                         
                         
@@ -100,7 +104,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             })
             task.resume()
         }
-        
+        // end asynchronous section on converting URL strings to Images
         return cell
     }
     
@@ -193,6 +197,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                                         } else {
                                             print("I could not parse images")
                                         }
+                          // end parsing images section
                                         
                                        self.artistArray.append(theArtist)
                                     }
