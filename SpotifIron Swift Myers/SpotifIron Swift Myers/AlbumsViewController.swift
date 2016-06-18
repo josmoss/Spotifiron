@@ -17,6 +17,7 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var theArtist = Artist()
     
+    
     var currentAlbum = Album()
     
 
