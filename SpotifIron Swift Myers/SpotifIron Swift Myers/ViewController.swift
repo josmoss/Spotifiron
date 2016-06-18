@@ -6,10 +6,6 @@
 //  Copyright © 2016 Dragoman Developers, LLC. All rights reserved.
 //
 
-
-
-
-
 import UIKit
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
@@ -33,20 +29,14 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         
-        
         textField.resignFirstResponder()
-        
         
         if let query = textField.text {
             print("The textfield value is \(query)")
-            
             self.fetchArtist(query)
         }
-        
         return true
-        
     }
-
     
     // MARK : Table View Methods
     
@@ -55,7 +45,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         
         return self.artistArray.count
     }
@@ -82,15 +71,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         // I just pulled this from the internet
                         
                         cell.imageView?.image = UIImage(named: "No_image")
-                        
-                        
                         cell.setNeedsLayout()
                     })
                     return
                 }
                 
                 if let data = data {
-                    
                     let image = UIImage(data: data)
                     
                     dispatch_async(dispatch_get_main_queue(), {
@@ -113,8 +99,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         self.currentArtist = self.artistArray[indexPath.row]
         
         performSegueWithIdentifier("albumSegue", sender: nil)
-        
-        
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -123,7 +107,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
             if let controller = segue.destinationViewController as? AlbumsViewController {
                 controller.theArtist = self.currentArtist
             }
-            
         }
     }
     
@@ -146,10 +129,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 if error != nil
                 {
                     print("An error occured")
-                
                     return
                 }
-                
                 do
                 {
                     if let data = data {
@@ -189,7 +170,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                                                         theArtist.imageURL = urlString
                                                 }
                                                 
-                                                
                                             } else {
                                                 print("Image not found")
                                             }
@@ -208,7 +188,6 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                                         self.tableView.reloadData()
                                     })
                                     
-                                    
                                 } else {
                                     print("I could not parse the items")
                                 }
@@ -225,11 +204,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 
             })
             task.resume()
-            
         }
     }
-
-
 }
 
 

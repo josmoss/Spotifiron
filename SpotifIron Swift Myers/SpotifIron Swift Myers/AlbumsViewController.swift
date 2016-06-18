@@ -11,6 +11,7 @@ import UIKit
 class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
+    
     let session = NSURLSession.sharedSession()
     
     var albumArray = [Album]()
@@ -19,7 +20,6 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var currentAlbum = Album()
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -28,23 +28,18 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        
         self.fetchAlbum(theArtist.artistID)
-        
     }
     
     // MARK : Table View Methods
     
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        
         return 1
     
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
         return self.albumArray.count
-        
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -56,7 +51,6 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.textLabel?.text = self.currentAlbum.albumName
         
         return cell
-        
     }
 
     func fetchAlbum(artistID : String) {
@@ -78,7 +72,6 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                         print("An error occured")
                         return
                     }
-                    
                     do
                     {
                         if let data = data {
@@ -120,7 +113,6 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                         self.tableView.reloadData()
                                     })
                                     
-                                    
                                    } else {
                                        print("I could not parse the items")
                                    }
@@ -132,21 +124,8 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                    } catch {
                         // error happened
                     }
-                    
            })
            task.resume()
-            
         }
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
