@@ -13,6 +13,9 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let session = NSURLSession.sharedSession()
     
     var albumArray = [Album]()
+    
+    var theArtist = Artist()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +26,7 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         super.viewWillAppear(animated)
         
         
-        self.fetchAlbum("7ypJwUskH6rxpPPCDTdV5V")
+        self.fetchAlbum(theArtist.artistID)
         
     }
     
@@ -37,7 +40,7 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 1
+        return self.albumArray.count
         
     }
     

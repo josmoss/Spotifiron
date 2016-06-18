@@ -20,6 +20,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     let session = NSURLSession.sharedSession()
     
+    var currentArtist = Artist()
+    
     var artistArray = [Artist]()
     
     override func viewDidLoad() {
@@ -64,15 +66,31 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         let cell = tableView .dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
         
-        let currentArtist = self.artistArray[indexPath.row]
+        self.currentArtist = self.artistArray[indexPath.row]
         
         cell.textLabel?.text = currentArtist.name
         
         return cell
     }
     
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        self.currentArtist = self.artistArray[indexPath.row]
+        
+        performSegueWithIdentifier("albumSegue", sender: nil)
+        
+        
+    }
     
-    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "albumSegue" {
+            
+            if let controller = segue.destinationViewController as? AlbumsViewController {
+                controller.theArtist = self.currentArtist
+            }
+            
+        }
+    }
     
     // MARK: Parsing Method
     
