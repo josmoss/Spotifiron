@@ -13,6 +13,9 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     let session = NSURLSession.sharedSession()
     
     var albumArray = [Album]()
+    
+    var theArtist = Artist()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
