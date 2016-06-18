@@ -56,7 +56,7 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
 
         print("fetchAlbum query value is \(artistID)")
         
-        let albumURLString = "https://api.spotify.com/v1/search?q=\(artistID)&type=album"
+        let albumURLString = "https://api.spotify.com/v1/search?q=\(theArtist.artistID)&type=album"
         
         if let url = NSURL(string: albumURLString)
         {
