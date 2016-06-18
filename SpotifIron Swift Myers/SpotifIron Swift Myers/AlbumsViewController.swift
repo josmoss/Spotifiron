@@ -10,6 +10,7 @@ import UIKit
 
 class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var tableView: UITableView!
     let session = NSURLSession.sharedSession()
     
     var albumArray = [Album]()
@@ -52,6 +53,8 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         self.currentAlbum = self.albumArray[indexPath.row]
         
+        cell.textLabel?.text = self.currentAlbum.albumName
+        
         return cell
         
     }
@@ -62,7 +65,7 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         self.albumArray.removeAll()
         
-        let albumURLString = "https://api.spotify.com/v1/search?q=\(theArtist.artistID)&type=album"
+        let albumURLString = "https://api.spotify.com/v1/artists/\(artistID)/albums"
         
         if let url = NSURL(string: albumURLString)
         {
@@ -113,7 +116,10 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                            self.albumArray.append(theAlbum)
                                        }
                                     
-        
+                                    dispatch_async(dispatch_get_main_queue(), {
+                                        self.tableView.reloadData()
+                                    })
+                                    
                                     
                                    } else {
                                        print("I could not parse the items")
