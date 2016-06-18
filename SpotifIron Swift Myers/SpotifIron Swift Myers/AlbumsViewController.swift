@@ -16,6 +16,8 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var theArtist = Artist()
     
+    var currentAlbum = Album()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +50,8 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let cell = tableView .dequeueReusableCellWithIdentifier("AlbumCell", forIndexPath: indexPath)
         
+        self.currentAlbum = self.albumArray[indexPath.row]
+        
         return cell
         
     }
@@ -55,6 +59,8 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func fetchAlbum(artistID : String) {
 
         print("fetchAlbum query value is \(artistID)")
+        
+        self.albumArray.removeAll()
         
         let albumURLString = "https://api.spotify.com/v1/search?q=\(theArtist.artistID)&type=album"
         
@@ -107,6 +113,7 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                            self.albumArray.append(theAlbum)
                                        }
                                     
+        
                                     
                                    } else {
                                        print("I could not parse the items")
