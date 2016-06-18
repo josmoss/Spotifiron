@@ -9,8 +9,8 @@
 /* Begin PBXBuildFile section */
 		C67200041D13996E00FC29DD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67200031D13996E00FC29DD /* Constants.swift */; };
 		C67200061D1399C500FC29DD /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = C67200051D1399C500FC29DD /* Artist.swift */; };
+		C69BB8121D15E24500C1F52E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C69BB8111D15E24500C1F52E /* ViewController.swift */; };
 		C6B7F6401D135B6A003C0956 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B7F63F1D135B6A003C0956 /* AppDelegate.swift */; };
-		C6B7F6421D135B6A003C0956 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6B7F6411D135B6A003C0956 /* ViewController.swift */; };
 		C6B7F6451D135B6A003C0956 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6B7F6431D135B6A003C0956 /* Main.storyboard */; };
 		C6B7F6471D135B6A003C0956 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C6B7F6461D135B6A003C0956 /* Assets.xcassets */; };
 		C6B7F64A1D135B6A003C0956 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C6B7F6481D135B6A003C0956 /* LaunchScreen.storyboard */; };
@@ -21,9 +21,9 @@
 /* Begin PBXFileReference section */
 		C67200031D13996E00FC29DD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		C67200051D1399C500FC29DD /* Artist.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		C69BB8111D15E24500C1F52E /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = "../../../TIY Daily Apps/ViewController.swift"; sourceTree = "<group>"; };
 		C6B7F63C1D135B6A003C0956 /* SpotifIron Swift Myers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SpotifIron Swift Myers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6B7F63F1D135B6A003C0956 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C6B7F6411D135B6A003C0956 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C6B7F6441D135B6A003C0956 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C6B7F6461D135B6A003C0956 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C6B7F6491D135B6A003C0956 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -86,7 +86,7 @@
 		C6ED6EBE1D14864C00A477C5 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				C6B7F6411D135B6A003C0956 /* ViewController.swift */,
+				C69BB8111D15E24500C1F52E /* ViewController.swift */,
 				D8238FF21D149BCC002C2488 /* AlbumsViewController.swift */,
 			);
 			name = Controllers;
@@ -163,10 +163,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C6B7F6421D135B6A003C0956 /* ViewController.swift in Sources */,
 				C6B7F6401D135B6A003C0956 /* AppDelegate.swift in Sources */,
 				C67200061D1399C500FC29DD /* Artist.swift in Sources */,
 				C67200041D13996E00FC29DD /* Constants.swift in Sources */,
+				C69BB8121D15E24500C1F52E /* ViewController.swift in Sources */,
 				D8238FF31D149BCC002C2488 /* AlbumsViewController.swift in Sources */,
 				C6EDBB711D14A81000639B71 /* Album.swift in Sources */,
 			);
