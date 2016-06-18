@@ -16,6 +16,7 @@ class Artist: NSObject {
     var popularity : Int = 0
     var artistType : String = ""
     var uri : String = ""
+    var imageURL : String = ""
     
     override init() {
         super.init()
@@ -26,6 +27,7 @@ class Artist: NSObject {
         self.popularity = 0
         self.artistType = ""
         self.uri = ""
+        self.imageURL = ""
         
     }
 }

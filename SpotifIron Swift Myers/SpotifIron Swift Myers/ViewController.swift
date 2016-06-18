@@ -70,6 +70,32 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         cell.textLabel?.text = currentArtist.name
         
+        if let imageURL = NSURL(string: self.currentArtist.imageURL) {
+            let imageSession = NSURLSession.sharedSession()
+            let task = imageSession.dataTaskWithURL(imageURL, completionHandler: {
+                (data, response, error) in
+                
+                if error != nil {
+                    print("image error occured")
+                    return
+                }
+                
+                if let data = data {
+                    
+                    let image = UIImage(data: data)
+                    
+                    dispatch_async(dispatch_get_main_queue(), {
+                        cell.imageView?.image = image
+                        cell.setNeedsLayout()
+                    })
+                    
+                } else {
+                    print ("No data found")
+                }
+            })
+            task.resume()
+        }
+        
         return cell
     }
     
@@ -140,6 +166,26 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                                             theArtist.artistID = artistID
                                         } else {
                                             print("I could not parse the artistID")
+                                        }
+                           // MARK: trying to pull image URL out
+                                        
+                                        if let imagesArray = itemsDict["images"] as? JSONArray {
+                                            
+                                            if !imagesArray.isEmpty == false {
+                                                
+                                                 let firstImageDict = imagesArray.first
+                                                
+                                                    if let urlString = firstImageDict?["url"] as? String {
+                                                        theArtist.imageURL = urlString
+                                                }
+                                                
+                                                
+                                            } else {
+                                                print("Images array is empty")
+                                            }
+                                            
+                                        } else {
+                                            print("I could not parse images")
                                         }
                                         
                                        self.artistArray.append(theArtist)
