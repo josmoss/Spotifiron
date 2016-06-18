@@ -43,7 +43,7 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView .dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        let cell = tableView .dequeueReusableCellWithIdentifier("AlbumCell", forIndexPath: indexPath)
         
         return cell
         
