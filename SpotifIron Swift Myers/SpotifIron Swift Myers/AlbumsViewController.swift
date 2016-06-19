@@ -67,7 +67,7 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 return
                 
             }
-            if let data = data {
+                if let data = data {
                 let image = UIImage(data: data)
                 
                 dispatch_async(dispatch_get_main_queue(), {
@@ -148,7 +148,7 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                                     let firstImageDict = imagesArray.first
                                                     
                                                     if let urlString = firstImageDict?["url"] as? String {
-                                                        self.currentAlbum.imageURL = urlString
+                                                        theAlbum.imageURL = urlString
                                                     }
                                                     
                                                 } else {
