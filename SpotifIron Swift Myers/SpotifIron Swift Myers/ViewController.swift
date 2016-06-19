@@ -51,11 +51,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView .dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        let cell = tableView .dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! ArtistTableViewCell
         
         self.currentArtist = self.artistArray[indexPath.row]
         
-        cell.textLabel?.text = currentArtist.name
+        cell.artistNameLabel?.text = currentArtist.name
+        cell.popularityScoreLabel?.text = String(self.currentArtist.popularity)
         
         // begin asynchronous section on converting URL strings into images
         if let imageURL = NSURL(string: self.currentArtist.imageURL) {
@@ -70,7 +71,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                         // make sure the file "No_image" is in the assets folder
                         // I just pulled this from the internet
                         
-                        cell.imageView?.image = UIImage(named: "No_image")
+                        cell.artistImageView?.image = UIImage(named: "No_image")
                         cell.setNeedsLayout()
                     })
                     return
@@ -80,7 +81,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                     let image = UIImage(data: data)
                     
                     dispatch_async(dispatch_get_main_queue(), {
-                        cell.imageView?.image = image
+                        cell.artistImageView?.image = image
                         cell.setNeedsLayout()
                     })
                     
@@ -157,6 +158,12 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                                             theArtist.artistID = artistID
                                         } else {
                                             print("I could not parse the artistID")
+                                        }
+                                        
+                                        if let popularity = itemsDict["popularity"] as? Int {
+                                            theArtist.popularity = popularity
+                                        } else {
+                                            print("I could not parse the popularity")
                                         }
                            // MARK: trying to pull image URL out
                                         

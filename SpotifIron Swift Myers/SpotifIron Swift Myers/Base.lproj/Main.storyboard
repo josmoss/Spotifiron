@@ -52,23 +52,23 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="40" id="hCW-uf-x3Z"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="24"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popularity" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NZC-LM-0bQ">
-                                                    <rect key="frame" x="181" y="99" width="77" height="28.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <rect key="frame" x="181" y="99" width="92" height="52"/>
+                                                    <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="20"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Uu-hK-fBT">
-                                                    <rect key="frame" x="198" y="135" width="44" height="76"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Uu-hK-fBT">
+                                                    <rect key="frame" x="198" y="171" width="44" height="40"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="44" id="06u-y3-4wr"/>
-                                                        <constraint firstAttribute="height" constant="76" id="7Cf-OV-lQY"/>
+                                                        <constraint firstAttribute="height" constant="40" id="7Cf-OV-lQY"/>
                                                     </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="IowanOldStyle-Roman" family="Iowan Old Style" pointSize="24"/>
                                                     <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -76,7 +76,7 @@
                                             <constraints>
                                                 <constraint firstItem="NZC-LM-0bQ" firstAttribute="leading" secondItem="mH3-ty-Jwl" secondAttribute="trailing" constant="8" id="1l1-C9-fLs"/>
                                                 <constraint firstItem="0Uu-hK-fBT" firstAttribute="leading" secondItem="mH3-ty-Jwl" secondAttribute="trailing" constant="25" id="5g4-mF-L3j"/>
-                                                <constraint firstItem="0Uu-hK-fBT" firstAttribute="top" secondItem="NZC-LM-0bQ" secondAttribute="bottom" constant="8" id="LIf-zh-hNW"/>
+                                                <constraint firstItem="0Uu-hK-fBT" firstAttribute="top" secondItem="NZC-LM-0bQ" secondAttribute="bottom" constant="20" id="LIf-zh-hNW"/>
                                                 <constraint firstItem="NZC-LM-0bQ" firstAttribute="top" secondItem="Qwl-7L-dEb" secondAttribute="bottom" constant="51" id="Rw8-si-k4e"/>
                                                 <constraint firstItem="Qwl-7L-dEb" firstAttribute="top" secondItem="9BZ-6E-wUI" secondAttribute="top" constant="8" id="Vwx-Gd-EsJ"/>
                                                 <constraint firstAttribute="trailing" secondItem="Qwl-7L-dEb" secondAttribute="trailing" constant="8" id="Wyh-mz-qIn"/>
@@ -121,7 +121,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="816" y="436"/>
+            <point key="canvasLocation" x="886" y="436"/>
         </scene>
         <!--Spotifiron Albums-->
         <scene sceneID="I8F-GD-M9m">
