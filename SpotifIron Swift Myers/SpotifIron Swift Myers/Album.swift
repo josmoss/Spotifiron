@@ -14,6 +14,7 @@ class Album: NSObject {
     var albumID : String = ""
     var albumName : String = ""
     var uri : String = ""
+    var imageURL : String = ""
     
     override init() {
         super.init()
@@ -22,7 +23,7 @@ class Album: NSObject {
         self.albumID = ""
         self.albumName = ""
         self.uri = ""
-        
+        self.imageURL = ""
         
     }
     

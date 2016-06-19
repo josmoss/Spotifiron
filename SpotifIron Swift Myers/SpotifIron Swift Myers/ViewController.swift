@@ -64,7 +64,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                 (data, response, error) in
                 
                 if error != nil {
-                    print("image error occured")
+                    print("image error occurred")
                     
                     dispatch_async(dispatch_get_main_queue(), {
                         // make sure the file "No_image" is in the assets folder
