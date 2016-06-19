@@ -38,7 +38,7 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yfh-RI-qC1" id="9BZ-6E-wUI">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.41568627450980389" green="0.8901960784313725" blue="0.40784313725490196" alpha="1" colorSpace="calibratedRGB"/>
@@ -93,7 +93,7 @@
                                         <rect key="frame" x="0.0" y="92" width="570" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t0F-u4-3jr" id="NlJ-Q2-zzZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="570" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="570" height="43"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" red="0.41568627450000001" green="0.89019607840000003" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
                                         </tableViewCellContentView>

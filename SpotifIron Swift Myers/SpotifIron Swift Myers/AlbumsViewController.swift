@@ -148,7 +148,7 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                                     let firstImageDict = imagesArray.first
                                                     
                                                     if let urlString = firstImageDict?["url"] as? String {
-                                                        self.theArtist.imageURL = urlString
+                                                        self.currentAlbum.imageURL = urlString
                                                     }
                                                     
                                                 } else {
