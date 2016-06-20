@@ -205,7 +205,7 @@
         <!--Spotifiron Tracks Scene-->
         <scene sceneID="VEN-gy-gGp">
             <objects>
-                <viewController title="Spotifiron Tracks Scene" id="fgq-Lh-baZ" sceneMemberID="viewController">
+                <viewController title="Spotifiron Tracks Scene" id="fgq-Lh-baZ" customClass="TracksViewController" customModule="SpotifIron_Swift_Myers" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dbh-Gk-u4l"/>
                         <viewControllerLayoutGuide type="bottom" id="lQL-ZO-f2W"/>
@@ -241,6 +241,9 @@
                             <constraint firstItem="OcW-Nr-fuG" firstAttribute="top" secondItem="dbh-Gk-u4l" secondAttribute="bottom" id="etY-Xr-i3r"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="OcW-Nr-fuG" id="GNq-oi-hVe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uJ6-C6-k7y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

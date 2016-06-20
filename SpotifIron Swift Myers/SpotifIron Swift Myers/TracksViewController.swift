@@ -10,6 +10,8 @@ import UIKit
 
 class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    @IBOutlet weak var tableView: UITableView!
+    
     let session = NSURLSession.sharedSession()
     
     var theAlbum = Album()
@@ -17,6 +19,8 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
     var trackArray = [Track]()
     
     var currentTrack = Track()
+    
+    var songLength = ""
     
 
     override func viewDidLoad() {
@@ -28,7 +32,17 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        // func fetchTrack()
+        fetchTrack(self.theAlbum.albumID)
+        
+    }
+    
+    func duration() {
+        
+        let minutes = self.currentTrack.duration // 60
+        
+        let seconds = self.currentTrack.duration % 60
+        
+        self.songLength = "\(minutes) minutes & \(seconds) seconds"
         
     }
 
@@ -42,6 +56,8 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView .dequeueReusableCellWithIdentifier("trackCell", forIndexPath: indexPath)
+        
+        cell.textLabel?.text = self.currentTrack.name
         
         return cell
     }
@@ -97,8 +113,13 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
                                         } else {
                                             print("I could not parse the song duration")
                                         }
+                                        self.trackArray.append(theTrack)
                                         
                                     }
+                                    dispatch_async(dispatch_get_main_queue(), {
+                                        self.tableView.reloadData()
+                                    })
+
                                 }
                             }
                         }
