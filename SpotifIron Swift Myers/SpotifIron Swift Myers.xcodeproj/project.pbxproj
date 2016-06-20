@@ -19,6 +19,7 @@
 		C6D68ED11D17626000B05CA9 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6D68ED01D17626000B05CA9 /* Track.swift */; };
 		C6EDBB711D14A81000639B71 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6EDBB701D14A81000639B71 /* Album.swift */; };
 		D8238FF31D149BCC002C2488 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8238FF21D149BCC002C2488 /* AlbumsViewController.swift */; };
+		D8238FF51D175AE6002C2488 /* AlbumTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8238FF41D175AE6002C2488 /* AlbumTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		C6D68ED01D17626000B05CA9 /* Track.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		C6EDBB701D14A81000639B71 /* Album.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		D8238FF21D149BCC002C2488 /* AlbumsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
+		D8238FF41D175AE6002C2488 /* AlbumTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlbumTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				C6A8C3801D173CCA00F08F57 /* ArtistTableViewCell.swift */,
+				D8238FF41D175AE6002C2488 /* AlbumTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -189,6 +192,7 @@
 				D8238FF31D149BCC002C2488 /* AlbumsViewController.swift in Sources */,
 				C6EDBB711D14A81000639B71 /* Album.swift in Sources */,
 				C6A8C3811D173CCA00F08F57 /* ArtistTableViewCell.swift in Sources */,
+				D8238FF51D175AE6002C2488 /* AlbumTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

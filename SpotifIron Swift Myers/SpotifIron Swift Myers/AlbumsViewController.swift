@@ -44,11 +44,11 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView .dequeueReusableCellWithIdentifier("AlbumCell", forIndexPath: indexPath)
+        let cell = tableView .dequeueReusableCellWithIdentifier("AlbumCell", forIndexPath: indexPath) as! AlbumTableViewCell
         
         self.currentAlbum = self.albumArray[indexPath.row]
         
-        cell.textLabel?.text = self.currentAlbum.albumName
+        cell.albumNameLabel?.text = currentAlbum.albumName
         
         //begin async section, converting URL strings into images
         if let imageURL = NSURL(string: self.currentAlbum.imageURL) {
@@ -61,7 +61,7 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 
                 dispatch_async(dispatch_get_main_queue(), {
                 
-                cell.imageView?.image = UIImage(named: "No_image")
+                cell.albumImageView?.image = UIImage(named: "No_image")
                 cell.setNeedsLayout()
                 })
                 return
@@ -72,7 +72,7 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 
                 dispatch_async(dispatch_get_main_queue(), {
                     
-                cell.imageView?.image = image
+                cell.albumImageView?.image = image
                 cell.setNeedsLayout()
                 
                 })
