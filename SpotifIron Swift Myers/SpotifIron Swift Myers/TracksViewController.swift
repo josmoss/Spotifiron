@@ -57,6 +57,10 @@ class TracksViewController: UIViewController, UITableViewDelegate, UITableViewDa
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView .dequeueReusableCellWithIdentifier("trackCell", forIndexPath: indexPath)
         
+        self.currentTrack = self.trackArray[indexPath.row]
+        
+        cell.textLabel?.font = UIFont.preferredFontForTextStyle("Iowan Old Style")
+        
         cell.textLabel?.text = self.currentTrack.name
         
         return cell
