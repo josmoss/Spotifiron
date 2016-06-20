@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Spotifiron Artist Search-->
@@ -38,11 +39,11 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="220"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yfh-RI-qC1" id="9BZ-6E-wUI">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="219.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="219"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mH3-ty-Jwl">
-                                                    <rect key="frame" x="8" y="8" width="165" height="203.5"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mH3-ty-Jwl">
+                                                    <rect key="frame" x="8" y="8" width="165" height="204"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="165" id="FUU-8Q-cQB"/>
                                                     </constraints>
@@ -135,20 +136,47 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vSQ-vm-gUy">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="165" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vSQ-vm-gUy">
                                 <rect key="frame" x="15" y="79" width="570" height="506"/>
                                 <color key="backgroundColor" red="0.41568627450000001" green="0.89019607840000003" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="sectionIndexBackgroundColor" red="0.41568627450000001" green="0.89019607840000003" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AlbumCell" id="t0F-u4-3jr">
-                                        <rect key="frame" x="0.0" y="92" width="570" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="AlbumCell" rowHeight="165" id="t0F-u4-3jr" customClass="AlbumTableViewCell" customModule="SpotifIron_Swift_Myers" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="92" width="570" height="165"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t0F-u4-3jr" id="NlJ-Q2-zzZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="570" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="570" height="164"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4bq-yo-rqV">
+                                                    <rect key="frame" x="8" y="8" width="165" height="148"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="165" id="fx0-E2-I8Q"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1cl-VN-O1K">
+                                                    <rect key="frame" x="181" y="71" width="373" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
                                             <color key="backgroundColor" red="0.41568627450000001" green="0.89019607840000003" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
+                                            <constraints>
+                                                <constraint firstItem="1cl-VN-O1K" firstAttribute="leading" secondItem="4bq-yo-rqV" secondAttribute="trailing" constant="8" id="1GY-Yg-bDM"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="1cl-VN-O1K" secondAttribute="trailing" constant="8" id="66H-x9-ppV"/>
+                                                <constraint firstItem="4bq-yo-rqV" firstAttribute="leading" secondItem="NlJ-Q2-zzZ" secondAttribute="leadingMargin" id="LZV-2T-Fu7"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="1cl-VN-O1K" secondAttribute="bottom" constant="64" id="fax-FJ-0aD"/>
+                                                <constraint firstItem="1cl-VN-O1K" firstAttribute="top" secondItem="NlJ-Q2-zzZ" secondAttribute="topMargin" constant="63" id="gDJ-kG-pAO"/>
+                                                <constraint firstItem="4bq-yo-rqV" firstAttribute="top" secondItem="NlJ-Q2-zzZ" secondAttribute="topMargin" id="jw5-H1-cT6"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="4bq-yo-rqV" secondAttribute="bottom" id="u6u-tj-1WQ"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.41568627450000001" green="0.89019607840000003" blue="0.40784313729999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <connections>
+                                            <outlet property="albumImageView" destination="4bq-yo-rqV" id="l0L-IN-r9E"/>
+                                            <outlet property="albumNameLabel" destination="1cl-VN-O1K" id="UBX-2C-TRt"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
