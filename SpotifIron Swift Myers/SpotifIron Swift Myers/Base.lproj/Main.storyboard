@@ -39,10 +39,10 @@
                                         <rect key="frame" x="0.0" y="28" width="600" height="220"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Yfh-RI-qC1" id="9BZ-6E-wUI">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="219"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="219.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mH3-ty-Jwl">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mH3-ty-Jwl">
                                                     <rect key="frame" x="8" y="8" width="165" height="204"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="165" id="FUU-8Q-cQB"/>
@@ -145,7 +145,7 @@
                                         <rect key="frame" x="0.0" y="92" width="570" height="165"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="t0F-u4-3jr" id="NlJ-Q2-zzZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="570" height="164"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="570" height="164.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4bq-yo-rqV">

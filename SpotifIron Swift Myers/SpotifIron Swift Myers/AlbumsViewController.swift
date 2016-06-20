@@ -20,10 +20,6 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     var currentAlbum = Album()
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-
-    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -85,6 +81,21 @@ class AlbumsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
     }
         return cell
+    }
+    
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        self.currentAlbum = self.albumArray[indexPath.row]
+        
+        performSegueWithIdentifier("TrackSegue", sender: nil)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "TrackSegue" {
+            
+            if let trackController = segue.destinationViewController as? TracksViewController {
+                trackController.theAlbum = self.currentAlbum
+            }
+        }
     }
 
     func fetchAlbum(artistID : String) {
